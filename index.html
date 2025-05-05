@@ -3,36 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrarse y Comentar</title>
+    <title>Foro de Estudiantes</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Bienvenido</h1>
+        <h1>📚 Foro de Estudiantes</h1>
 
-        <!-- Formulario de registro de usuario -->
-        <div class="register-form">
-            <h2>Registrarse</h2>
-            <form id="register-form">
-                <input type="text" id="username" placeholder="Nombre de usuario" required>
-                <input type="password" id="password" placeholder="Contraseña" required>
-                <button type="submit">Registrarse</button>
-            </form>
+        <!-- Formulario de inicio de sesión -->
+        <div id="login-container">
+            <h2>Inicia sesión</h2>
+            <input type="text" id="login-username" placeholder="Nombre de usuario" required>
+            <input type="password" id="login-password" placeholder="Contraseña" required>
+            <button onclick="login()">Entrar</button>
+            <p>¿No tienes cuenta? <a href="#" onclick="showRegister()">Regístrate aquí</a></p>
         </div>
 
-        <!-- Sección para mostrar los comentarios -->
-        <div class="comments-section">
-            <h2>Comentarios</h2>
-            <div id="comments-list">
-                <!-- Los comentarios se agregarán aquí -->
-            </div>
-            <form id="comment-form">
-                <textarea id="comment" placeholder="Escribe un comentario" required></textarea>
-                <button type="submit">Comentar</button>
-            </form>
+        <!-- Formulario de registro -->
+        <div id="register-container" style="display: none;">
+            <h2>Crea una cuenta</h2>
+            <input type="text" id="register-username" placeholder="Elige un nombre de usuario" required>
+            <input type="password" id="register-password" placeholder="Crea una contraseña" required>
+            <button onclick="register()">Registrarse</button>
+            <p>¿Ya tienes cuenta? <a href="#" onclick="showLogin()">Inicia sesión</a></p>
         </div>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
